@@ -1,0 +1,4 @@
+###### PLEASE SET HOME DIRECTORY ###### 
+USER="/Users/apasamar"
+backup_path=Library/Application\ Support/MobileSync/Backup/
+######################################
