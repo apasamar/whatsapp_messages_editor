@@ -2,7 +2,8 @@
 
 With this tool you can edit Whatssapp messages from your local backup and sync it with your iPhone.
 
-It works fine in MAC OS X, but if you want to use it in linux you have to compile src/php_wrapper.c and copy it to bin/ path. Then:
+It works fine in MAC OS X, but if you want to use it in linux you have to compile src/php_wrapper.c and copy it to bin/ path. 
+Then:
 * chown root php_wrapper 
 * chmod u=rwx,go=xr,+s php_wrapper
 
