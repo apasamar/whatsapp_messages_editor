@@ -13,7 +13,7 @@ You also need to set up 'local user' and 'backup path' at config.txt file.
 
 Enable a web server and access http://<you_ip>/whatsapp_messages_editor/whatsapp_messages_editor.php
 
-* Step 0: Enter flight mode ( or you will lose some messages)
+* Step 0: Set flight mode on your iPhone (or you could lose the messages after restore process)
 * Step 1: Backup your iPhone with iTunes 
 * Step 2: Use Whatssapp Messages Editor to edit any message you want
 * Step 3: Restore you backup
