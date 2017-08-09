@@ -19,22 +19,19 @@ BACKUP=$(/bin/ls -t $PATH|/usr/bin/head -n1)
 
 #####   ATTENTION !!!!!! #########
 # THIS LINE IS FOR TESTING PURPOSES ONLY. COMMENT IT AFTER TEST
-#BACKUP="bbd1153505abb9f87a1f10768fe8bf7671a0355e"   # SET BACKUP FOLDER MANUALY !!!!
-BACKUP="a6df71ee1ea688690c8f4a96e7ccfae49fcca69a-20170418-124730"
+BACKUP="bbd1153505abb9f87a1f10768fe8bf7671a0355e"   # SET BACKUP FOLDER MANUALY !!!!
+
+
 
 ##################################
 #### GET Manifest FILE ###########
-MANIFEST=$(/bin/ls $PATH$BACKUP | /usr/bin/grep 'Manifest.db'|/usr/bin/head -n1)
+MANIFEST=$(/bin/ls $PATH$BACKUP | /usr/bin/grep 'Manifest.mbdb')
 ##################################
 
-
 #### GET ChatStorage.sqlite file from LAST BACKUP #####
-
-
-CHATSTORAGE=$(/usr/bin/sqlite3 $PATH$BACKUP"/"$MANIFEST "select * from files" |/usr/bin/grep -i ChatStorage.sqlite| /usr/bin/awk -F"|" '{print $1}')
-CHATSTORAGE_DIR=$(echo $CHATSTORAGE|/usr/bin/cut -c1,2)
+CHATSTORAGE=$(/usr/bin/python ../scripts/listManifest.py $PATH$BACKUP"/"$MANIFEST | /usr/bin/grep 'ChatStorage.sqlite'| /usr/bin/cut -d"|" -f10)
 #######################################################
 
 #### PRINT RESULT ################
-echo $PATH$BACKUP"/"$CHATSTORAGE_DIR"/"$CHATSTORAGE
+echo $PATH$BACKUP"/"$CHATSTORAGE
 ##################################
